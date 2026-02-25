@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ذوق الأيادي – تعاونية الحلويات والمخبوزات</title>
+    <!-- Font Awesome (icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts (Cairo for Arabic) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #fef9f0;  /* warm background */
+            color: #3a2c1b;
+            line-height: 1.6;
+            direction: rtl;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* header / hero */
+        .hero {
+            background: linear-gradient(165deg, #b45f2b 0%, #864c24 100%);
+            color: white;
+            padding: 2.5rem 0 3rem;
+            border-bottom-left-radius: 3rem;
+            border-bottom-right-radius: 3rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 2;
+            min-width: 280px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        }
+
+        .hero-text h1 small {
+            font-size: 1.8rem;
+            font-weight: 400;
+            display: block;
+            color: #ffe6b3;
+        }
+
+        .hero-text .slogan {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem;
+            background: rgba(255,255,240,0.15);
+            display: inline-block;
+            padding: 0.3rem 1.5rem;
+            border-radius: 50px;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-text .sub-slogan {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-logo {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .hero-logo img {
+            max-width: 100%;
+            width: 240px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 40px 40px 40px 8px;
+            padding: 1.2rem 1rem;
+            box-shadow: 0 18px 30px -8px #3d2b16;
+            border: 4px solid #ffd89a;
+            transition: transform 0.3s;
+        }
+
+        .hero-logo img:hover {
+            transform: scale(1.02);
+        }
+
+        .contact-info {
+            background: #ffeac2;
+            color: #4f351a;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            display: inline-flex;
+            flex-wrap: wrap;
+            gap: 1.5rem 2.5rem;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+            border: 2px solid #cb7b42;
+        }
+
+        .contact-info i {
+            color: #a34e1c;
+            margin-left: 0.5rem;
+        }
+
+        .contact-info a {
+            color: #3b2a13;
+            text-decoration: none;
+            border-bottom: 2px dotted transparent;
+            transition: 0.2s;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: #a34e1c;
+        }
+
+        /* opening banner */
+        .opening-banner {
+            background: #f5dbb1;
+            border-right: 8px solid #b45f2b;
+            padding: 1.6rem 2rem;
+            border-radius: 2rem;
+            margin: 2.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 6px 12px #e2c9a5;
+        }
+
+        .opening-banner h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #6f3f19;
+        }
+
+        .opening-banner .date {
+            background: #a34e1c;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 3rem;
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .opening-banner .date i {
+            font-size: 2rem;
+        }
+
+        .special-price {
+            background: #ffe6b3;
+            border-radius: 3rem;
+            padding: 0.5rem 2rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            border: 3px dashed #b45f2b;
+        }
+
+        /* category section */
+        .category {
+            margin: 4rem 0;
+        }
+
+        .category-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #864c24;
+            border-bottom: 5px solid #cb7b42;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 4px #f9e2c1;
+        }
+
+        .category-sub {
+            font-size: 1.6rem;
+            color: #aa5f2a;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 2.5rem 1rem 2.5rem 1rem;
+            padding: 1.8rem 1rem 1.5rem;
+            box-shadow: 0 12px 20px -12px rgba(110, 60, 20, 0.3);
+            transition: all 0.25s;
+            border: 1px solid #f5dbb1;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 30px -10px #a66837;
+            border-color: #b9763c;
+        }
+
+        .product-name {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #572f12;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-price {
+            font-size: 1.9rem;
+            font-weight: 800;
+            background: #fbe5c2;
+            display: inline-block;
+            padding: 0.2rem 1.5rem;
+            border-radius: 40px;
+            color: #7d411b;
+            border: 1px solid #cb9f6b;
+        }
+
+        .product-unit {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #5a3f24;
+            margin-right: 0.3rem;
+        }
+
+        .note-special {
+            background: #efe1cd;
+            border-radius: 2rem;
+            padding: 0.2rem 1rem;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: #2f1f0e;
+        }
+
+        /* map + facebook row */
+        .info-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 4rem 0 3rem;
+        }
+
+        .map-box {
+            flex: 2;
+            min-width: 300px;
+            background: #d9b382;
+            padding: 1rem;
+            border-radius: 2rem;
+            box-shadow: 0 10px 18px #bb8b60;
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 1.5rem;
+            border: 4px solid white;
+        }
+
+        .facebook-box {
+            flex: 1;
+            min-width: 260px;
+            background: #3b5998;
+            color: white;
+            border-radius: 2rem;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 10px 18px #2d4682;
+        }
+
+        .facebook-box i {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .facebook-box a {
+            background: white;
+            color: #3b5998;
+            padding: 0.8rem 2rem;
+            border-radius: 4rem;
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: 0.2s;
+            margin-top: 1rem;
+            border: 2px solid white;
+        }
+
+        .facebook-box a:hover {
+            background: #3b5998;
+            color: white;
+        }
+
+        .manager-contact {
+            background: #482818;
+            color: #ffdbb5;
+            padding: 1.2rem 2rem;
+            border-radius: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 1.8rem;
+            margin: 3rem 0;
+        }
+
+        .manager-contact span {
+            background: #b97746;
+            color: black;
+            padding: 0.3rem 1.8rem;
+            border-radius: 3rem;
+            font-weight: 700;
+            font-size: 2rem;
+            direction: ltr;
+        }
+
+        footer {
+            background: #2f1f10;
+            color: #eacdab;
+            padding: 2rem;
+            border-radius: 5rem 5rem 0 0;
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 3rem;
+        }
+
+        /* responsive */
+        @media (max-width: 680px) {
+            .hero-text h1 { font-size: 2.5rem; }
+            .contact-info { font-size: 1rem; }
+            .opening-banner h2 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero avec logo et nom (PDF2) -->
+<section class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h1>ذوق الأيادي <small>تعاونية الحلويات و المخبوزات</small></h1>
+            <div class="slogan">نَصْنَعُ بِإِتْقَانٍ لِأَنَّكُمْ تَسْتَحِقُّونَ طَعْمًا اسْتِثْنَائِيًّا</div>
+            <div class="sub-slogan">عشاق الحلويات المغربية و المالح و المخبوزات</div>
+            <div class="contact-info">
+                <span><i class="fas fa-map-pin"></i> سوق الخميس القديم (Maps)</span>
+                <span><i class="fas fa-phone-alt"></i> المدير: <a href="tel:+212662048403">0662 04 84 03</a></span>
+            </div>
+        </div>
+        <div class="hero-logo">
+            <!-- logo du pdf2 : دوو اليلدى + تعاونية  (représentation stylisée) -->
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%23fbeed6' rx='40'/%3E%3Ctext x='100' y='80' font-size='40' text-anchor='middle' font-family='Arial' fill='%2399552b'%3E🍰%3C/text%3E%3Ctext x='100' y='130' font-size='30' text-anchor='middle' font-family='Arial' fill='%237b3f1a' font-weight='bold'%3Eذوق%3C/text%3E%3Ctext x='100' y='165' font-size='30' text-anchor='middle' font-family='Arial' fill='%237b3f1a' font-weight='bold'%3Eالأيادي%3C/text%3E%3Ctext x='100' y='195' font-size='20' text-anchor='middle' font-family='Arial' fill='%23ad6d40'%3Eتعاونية%3C/text%3E%3C/svg%3E"
+                 alt="شعار ذوق الأيادي" title="تعاونية ذوق الأيادي">
+        </div>
+    </div>
+</section>
+
+<div class="container">
+
+    <!-- افتتاح + ذكرى (page 1) -->
+    <div class="opening-banner">
+        <div>
+            <h2><i class="fas fa-gem"></i> بمناسبة افتتاح المقر</h2>
+            <p style="font-size:1.4rem;">تقاسم معنا الذكرى الاستثنائية</p>
+        </div>
+        <div class="date">
+            <i class="far fa-calendar-alt"></i> الأحد 08 فبراير 2026
+        </div>
+        <div class="special-price">
+            منتوجات بأثمنة تفضيلية
+        </div>
+    </div>
+
+    <!-- المنتجات حسب الصفحات -->
+
+    <!-- page 2 : حلويات مغربية (شباكية، سلو، غريبة، فقاص، صابلي) -->
+    <div class="category">
+        <div class="category-title">🍪 حلويات مغربية تقليدية</div>
+        <div class="category-sub">نَصْنَعُ بِإِتْقَانٍ لِأَنَّكُمْ تَسْتَحِقُّونَ طَعْمًا اسْتِثْنَائِيًّا</div>
+        <div class="product-grid">
+            <div class="product-card"><div class="product-name">شباكية (اللوز)</div><div class="product-price">60 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">سلو باللوز</div><div class="product-price">100-120 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">غريبة</div><div class="product-price">60 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">فِقَاص</div><div class="product-price">50 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">صابلي متنوع</div><div class="product-price">60-70 <span class="product-unit">dh</span></div></div>
+        </div>
+    </div>
+
+    <!-- page 3 : المالح (بريوات، بسطيات، نيم) -->
+    <div class="category">
+        <div class="category-title">🧂 المالح المغربي الفاخر</div>
+        <div class="category-sub">عشاق المالح والحلو المغربي</div>
+        <div class="product-grid">
+            <div class="product-card"><div class="product-name">بريوات الضرة</div><div class="product-price">8 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">بريوات النوت</div><div class="product-price">8 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">بريوات اللوز</div><div class="product-price">8 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">بسطيات النوت</div><div class="product-price">15 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">بسطيات الباجي</div><div class="product-price">10 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">نيم الضرة (أو الفراجي)</div><div class="product-price">9 <span class="product-unit">dh</span></div></div>
+        </div>
+    </div>
+
+    <!-- page 4 : بطوط، مهم، ميني بيتزا، بعري ... -->
+    <div class="category">
+        <div class="category-title">🥖 مخبوزات ولحوم صغيرة</div>
+        <div class="category-sub">عشاق المالح والحلو المغربي</div>
+        <div class="product-grid">
+            <div class="product-card"><div class="product-name">بطوط عام</div><div class="product-price">5 <span class="product-unit">dh/unité</span></div></div>
+            <div class="product-card"><div class="product-name">مهم عام</div><div class="product-price">4 <span class="product-unit">dh/unité</span></div></div>
+            <div class="product-card"><div class="product-name">ميني بيتزا عامة</div><div class="product-price">5 <span class="product-unit">dh/unité</span></div></div>
+            <div class="product-card"><div class="product-name">مهم</div><div class="product-price">2 <span class="product-unit">dh/unité</span></div></div>
+            <div class="product-card"><div class="product-name">ميني بطوط</div><div class="product-price">1 <span class="product-unit">dh/unité</span></div></div>
+            <div class="product-card"><div class="product-name">بَعْري</div><div class="product-price">2 <span class="product-unit">dh/unité</span></div></div>
+        </div>
+    </div>
+
+    <!-- page 5 : ميني بطبوط، الكرص، ميني بيئتزا، بوز القمح ... -->
+    <div class="category">
+        <div class="category-title">🌾 خبز وحبوب تقليدية</div>
+        <div class="category-sub">عشاق المخبوزات</div>
+        <div class="product-grid">
+            <div class="product-card"><div class="product-name">ميني بطبوط</div><div class="product-price">1,5 <span class="product-unit">dh/unité</span></div></div>
+            <div class="product-card"><div class="product-name">الكرص</div><div class="product-price">1 <span class="product-unit">dh/unité</span></div></div>
+            <div class="product-card"><div class="product-name">ميني بيئتزا</div><div class="product-price">1 <span class="product-unit">dh/unité</span></div></div>
+            <div class="product-card"><div class="product-name">بُزِ القَمْح</div><div class="product-price">4 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">بطبوط القَمْح</div><div class="product-price">4 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">بطبوط القَمْح</div><div class="product-price">3 <span class="product-unit">dh</span></div></div>
+        </div>
+    </div>
+
+    <!-- page 6 : حلويات أجنبية (تحت الطلب) -->
+    <div class="category">
+        <div class="category-title">🧁 حلويات أجنبية (تحت الطلب)</div>
+        <div class="category-sub">عشاق الحلويات الأجنبية</div>
+        <div class="product-grid">
+            <div class="product-card"><div class="product-name">Mini soirée</div><div class="product-price">4-6 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">Cupcake</div><div class="product-price">10-15 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">Fondant au chocolat</div><div class="product-price">15-20 <span class="product-unit">dh</span></div></div>
+            <div class="product-card"><div class="product-name">Macaron</div><div class="product-price">5-10 <span class="product-unit">dh</span></div></div>
+        </div>
+    </div>
+
+    <!-- page 7 : Entremet glacé -->
+    <div class="category">
+        <div class="category-title">🍰 حلويات فاخرة</div>
+        <div class="product-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+            <div class="product-card">
+                <div class="product-name">Entremet glacé</div>
+                <div class="product-price">150-180 <span class="product-unit">dh/Kg</span></div>
+                <div class="note-special"><i class="fas fa-snowflake"></i> تحت الطلب</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- خريطة الموقع (Maps coordinates 31°46'14.1"N 8°06'39.1"W) + facebook -->
+    <div class="info-row">
+        <div class="map-box">
+            <h3 style="color:white; margin-bottom:0.8rem; font-size:1.8rem;">📍 موقعنا قرب سوق الخميس القديم</h3>
+            <!-- Iframe Google Maps using the exact coordinates (31°46'14.1"N 8°06'39.1"W) -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3000!2d-8.110861!3d31.770583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDQ2JzE0LjEiTiA4wrAwNiczOS4xIlc!5e1!3m2!1sfr!2sma!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+            <p style="color: #2e1d0e; background: #fbe6c2; border-radius:2rem; padding:0.4rem; text-align:center; margin-top:0.5rem;">
+                <i class="fas fa-map-marker-alt"></i> 31°46'14.1"N 8°06'39.1"W
+            </p>
+        </div>
+        <div class="facebook-box">
+            <i class="fab fa-facebook-square"></i>
+            <h2 style="font-size: 2rem;">صفحتنا على فيسبوك</h2>
+            <a href="https://web.facebook.com/profile.php?id=61587271079392" target="_blank">ذوق الأيادي</a>
+            <p style="margin-top: 1.5rem;">تابعونا لكل جديد</p>
+        </div>
+    </div>
+
+    <!-- رقم المدير Med -->
+    <div class="manager-contact">
+        <i class="fas fa-mobile-alt"></i> المدير المسؤول: <span>0662 04 84 03</span>
+        <a href="tel:+212662048403" style="color:#ffda9e; font-size:1.6rem; margin-right:1rem;"><i class="fas fa-phone"></i> اتصال مباشر</a>
+    </div>
+
+    <!-- عبارات من الصفحات (مكررة) -->
+    <div style="background: #fae7ce; border-radius: 4rem; padding: 2rem; text-align: center; font-size: 2rem; font-weight: 700; color: #6d3f1c; margin: 2rem 0;">
+        نَصْنَعُ بِإِتْقَانٍ لِأَنَّكُمْ تَسْتَحِقُّونَ طَعْمًا اسْتِثْنَائِيًّا
+    </div>
+
+</div> <!-- container -->
+
+<footer>
+    <p>🍪 تعاونية ذوق الأيادي – جميع الحقوق محفوظة © 2026</p>
+    <p>سوق الخميس القديم – مراكش | بمناسبة الافتتاح تخفيضات خاصة</p>
+    <div style="margin-top:1rem; font-size:1.5rem;">🇲🇦 نَصْنَعُ بِإِتْقَانٍ لِأَنَّكُمْ تَسْتَحِقُّونَ الْأَفْضَل</div>
+</footer>
+
+<!-- ربط الهاتف المحمول المباشر -->
+</body>
+</html>
